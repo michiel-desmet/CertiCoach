@@ -1,6 +1,21 @@
 spring:
   application:
     name: CertiCoach
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update # automatisch een table aangemaakt op basis van de @Entity.
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    defer-datasource-initialization: true
+
 server:
   port: 8080
   servlet:
